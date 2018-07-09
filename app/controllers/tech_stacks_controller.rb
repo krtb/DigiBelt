@@ -1,0 +1,2 @@
+class TechStacksController < ApplicationController
+end
