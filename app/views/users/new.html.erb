@@ -1,0 +1,7 @@
+<h1>Register for DigiBelt!</h1>
+
+<%= form_for @user do |f| %>
+  <%= f.label "Username: " %>
+  <%= f.text_field :name %> <br>
+  <%= f.submit "Create User!" %>
+<% end %>
