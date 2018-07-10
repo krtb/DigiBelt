@@ -7,8 +7,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    redirect_to @user
+    @user = User.new(user_params)
+    if @user.save
+      log_in_user(@user.id)
+      redirect_to users_path, notice: 'User was successfully created.'
+    else
+      render :new
+    end
   end
 
   #will delete index page, simply here to make sure our users are being created
@@ -22,7 +27,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:name, :password)
   end
 
   def fetch_user

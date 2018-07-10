@@ -1,7 +1,9 @@
 <ul>
   <% @users.each do |user| %>
   <li>
-    <%= user.name %>
+    <%= "Name: #{user.name}"%>
   </li>
   <% end %>
 </ul>
+
+<h1><%= link_to "Login", '/sessions/new' %></h1>
