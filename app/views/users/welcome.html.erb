@@ -1,0 +1,14 @@
+<h1>DigiBelt</h1>
+<br>
+
+<% if  @logged_in_user%>
+  <h5> <%= "Welcome, #{@logged_in_user.name}!" %> </h5> <br>
+<% else %>
+  <%= link_to "Log In", new_session_path %> <br>
+<% end %>
+
+<h2>Welcome to DigiBelt, an online tech advice service! Ever have trouble deciding on
+what technology to user for your project? We're here to try to help! Either consult our
+stored data on various technologies, or start a project here on our site! Based on your
+project specifications, we will try to recommend certain technologies to incorporate within
+your project. Click the links below to get started. </h2> <br>
