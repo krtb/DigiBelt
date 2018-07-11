@@ -1,0 +1,2 @@
+class Database < Tech
+end

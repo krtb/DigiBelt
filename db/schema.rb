@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_11_145124) do
+ActiveRecord::Schema.define(version: 2018_07_11_171126) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "databases", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "frameworks", force: :cascade do |t|
+    t.string "name"
+    t.integer "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_frameworks_on_language_id"
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string "name"
