@@ -7,10 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # wrote below delete_all method to wipe seeds when reinitiating
-# Language.delete_all
-# Database.delete_all
-# Framework.delete_all
-# Category.delete_all
+Language.delete_all
+Database.delete_all
+Framework.delete_all
+Category.delete_all
+
 lang0 = Language.create(name: "Placeholder", description: "Placeholder")
 lang1 = Language.create(name: "Python", description: "Useful language")
 lang2 = Language.create(name: "Ruby", description: "Useful language")

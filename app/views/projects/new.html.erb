@@ -1,5 +1,14 @@
 <h1>Fill out our form!</h1>
 
-<% Database.all.each do |database| %>
-  <%= database.name %>
+<%= form_for @project do |f| %>
+Please choose what kind of base language you'd like to write in:
+<%= f.collection_select :language_id, @languages, :id, :name %>
+<hr>
+Does your project need to persist data?
+  <%= f.radio_button :database, true, :checked => false %>
+  <%= f.label :database_bool, 'Yes' %>
+  <%= f.radio_button :database, false, :checked => false %>
+  <%= f.label :database_bool, 'No' %>
+  <hr>
+<%= f.submit "Here are my answers!" %>
 <% end %>
