@@ -1,3 +1,4 @@
-class Language < Tech
+class Language < ApplicationRecord
+has_many :frameworks
 
 end

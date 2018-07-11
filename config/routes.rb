@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :techs
-  resources :tech_stacks
   resources :projects
   resources :users
   resources :sessions, only: [:new, :create]

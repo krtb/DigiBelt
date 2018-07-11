@@ -1,3 +1,5 @@
-class Framework < Tech
-  belongs_to :language
+class Framework < ApplicationRecord
+belongs_to :language
+
+
 end

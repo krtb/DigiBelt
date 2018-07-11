@@ -1,2 +1,2 @@
-class Category < Tech
+class Category < ApplicationRecord
 end

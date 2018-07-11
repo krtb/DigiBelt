@@ -14,18 +14,21 @@ ActiveRecord::Schema.define(version: 2018_07_11_171126) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "databases", force: :cascade do |t|
     t.string "name"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "frameworks", force: :cascade do |t|
     t.string "name"
+    t.string "description"
     t.integer "language_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -34,6 +37,7 @@ ActiveRecord::Schema.define(version: 2018_07_11_171126) do
 
   create_table "languages", force: :cascade do |t|
     t.string "name"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -44,42 +48,6 @@ ActiveRecord::Schema.define(version: 2018_07_11_171126) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
-  end
-
-  create_table "tech_stack_items", force: :cascade do |t|
-    t.integer "tech_stack_id"
-    t.integer "tech_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["tech_id"], name: "index_tech_stack_items_on_tech_id"
-    t.index ["tech_stack_id"], name: "index_tech_stack_items_on_tech_stack_id"
-  end
-
-  create_table "tech_stacks", force: :cascade do |t|
-    t.integer "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_tech_stacks_on_project_id"
-  end
-
-  create_table "techs", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "category"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "database"
-    t.string "language"
-    t.string "hardware"
-  end
-
-  create_table "user_techs", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "tech_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["tech_id"], name: "index_user_techs_on_tech_id"
-    t.index ["user_id"], name: "index_user_techs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

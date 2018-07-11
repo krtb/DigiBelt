@@ -1,2 +1,2 @@
-class Database < Tech
+class Database < ApplicationRecord
 end
