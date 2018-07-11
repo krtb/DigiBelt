@@ -1,4 +1,4 @@
 class Language < ApplicationRecord
-has_many :frameworks
-
+    has_many :projects
+    has_many :frameworks
 end

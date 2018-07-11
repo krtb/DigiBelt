@@ -1,7 +1,5 @@
 <h1>Fill out our form!</h1>
 
-<%= form_for @project do |f| %>
-  <%= f.label "Database: " %>
-  <%= f.check_box :name %> <br>
-  <%= f.submit "Create Project!" %>
+<% Database.all.each do |database| %>
+  <%= database.name %>
 <% end %>
