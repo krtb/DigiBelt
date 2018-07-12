@@ -3,4 +3,10 @@
 <br>
 <label>Your database:</label><%= @project.database.name %>
 <br>
-<label>Your stack language:</label> <%= @project.language.name %>
+<label>Your stack language:</label> <%= link_to @project.language.name, language_path(@project.language.id) %>
+<br>
+<%= button_to 'Back Home', welcome_path, method: 'get' %>
+<hr>
+Frameworks:
+<br>
+<%= button_to 'Add this to your project' %>

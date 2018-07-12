@@ -17,3 +17,6 @@ your project. Click the links below to get started. </h2> <br>
 <hr>
 <%= button_to 'Information Page', info_path, method: 'get' %>
 <%= button_to 'Create a project', new_project_path, method: 'get' %>
+<% if @logged_in_user %>
+<%= button_to 'My Projects', projects_path, method: 'get' %>
+<% end %>

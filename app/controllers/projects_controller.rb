@@ -14,11 +14,12 @@ class ProjectsController < ApplicationController
   def create
     create_default_project
     project_params
-    if params[:project][:database_bool]
+    if params[:project][:database_bool] == "true"
       @project.database_id = 2
     else
       @project.database_id = 1
     end
+    @project.user_id = logged_in_user_id
     @project.name = params[:project][:name]
     @project.language_id = params[:project][:language_id].to_i
     @project.save
@@ -28,7 +29,8 @@ class ProjectsController < ApplicationController
 
   #will delete index page, simply here to make sure our projects are being created
   def index
-    @projects = Project.all
+    get_logged_in_user
+    @projects = Project.all.select {|project| project.user_id == logged_in_user_id }
   end
 
   def show

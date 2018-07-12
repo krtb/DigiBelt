@@ -9,9 +9,9 @@ Please choose what kind of base language you'd like to write in:
 <%= f.collection_select :language_id, @languages, :id, :name %>
 <hr>
 Does your project need to persist data?
-  <%= f.radio_button :database, true, :checked => false %>
+  <%= f.radio_button :database_bool, true, :checked => false %>
   <%= f.label :database_bool, 'Yes' %>
-  <%= f.radio_button :database, false, :checked => false %>
+  <%= f.radio_button :database_bool, false, :checked => false %>
   <%= f.label :database_bool, 'No' %>
   <hr>
 <%= f.submit "Here are my answers!" %>
