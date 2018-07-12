@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_action :fetch_user, only: [:show]
 
   def new
@@ -10,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in_user(@user.id)
-      redirect_to users_path, notice: 'User was successfully created.'
+      redirect_to welcome_path, notice: 'User was successfully created.'
     else
       render :new
     end
@@ -27,6 +26,10 @@ class UsersController < ApplicationController
   def welcome
   end
 
+  def info
+    @languages = Language.all
+    @databases = Database.all
+  end
 
   private
   def user_params

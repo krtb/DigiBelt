@@ -1,0 +1,16 @@
+<h1>DigiBelt Recommends:</h1>
+Languages:
+<ul>
+<% @languages.each do |language| %>
+ <li><h4><%= link_to language.name, language %></h4></li>
+ <h6><%= language.description %></h6>
+  <% language.frameworks.each do |framework| %>
+    <%= link_to framework.name, framework %>
+  <% end %>
+<% end %>
+</ul>
+Databases:
+<% @databases.each do |database| %>
+  <%= link_to database.name, database %>
+<% end %>
+<%= button_to 'Back Home', welcome_path, method: 'get' %>

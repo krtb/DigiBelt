@@ -2,7 +2,6 @@
   <% if @error %>
     <div id="error_explanation">
       <h2>An error prohibited this user from being saved:</h2>
-
       <ul>
         <li><%= @error %></li>
       </ul>
@@ -10,8 +9,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
   </div>
 
   <div class="field">
@@ -23,3 +22,5 @@
     <%= form.submit "Log in" %>
   </div>
 <% end %>
+<br>
+<%= button_to 'Back Home', welcome_path, method: 'get' %>

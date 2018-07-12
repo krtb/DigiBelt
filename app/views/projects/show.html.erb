@@ -1,3 +1,6 @@
 <h1>What you picked</h1>
-<%= @project.database.name %>
-<%= @project.language.name %>
+<label>Your project name:</label><%= @project.name %>
+<br>
+<label>Your database:</label><%= @project.database.name %>
+<br>
+<label>Your stack language:</label> <%= @project.language.name %>

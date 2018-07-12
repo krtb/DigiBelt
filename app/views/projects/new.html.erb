@@ -1,6 +1,10 @@
 <h1>Fill out our form!</h1>
 
 <%= form_for @project do |f| %>
+What would you like to name your project?
+<%= f.label :name %>
+<%= f.text_field :name %>
+<hr>
 Please choose what kind of base language you'd like to write in:
 <%= f.collection_select :language_id, @languages, :id, :name %>
 <hr>
@@ -12,3 +16,5 @@ Does your project need to persist data?
   <hr>
 <%= f.submit "Here are my answers!" %>
 <% end %>
+<br>
+<%= button_to 'Back Home', welcome_path, method: 'get' %>

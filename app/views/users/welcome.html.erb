@@ -1,14 +1,19 @@
 <h1>DigiBelt</h1>
 <br>
-
+<p id='notice' > <%= notice %> </p>
 <% if  @logged_in_user%>
   <h5> <%= "Welcome, #{@logged_in_user.name}!" %> </h5> <br>
+  <%= button_to "Logout", logout_path, method: 'get' %>
 <% else %>
-  <%= link_to "Log In", new_session_path %> <br>
+  <%= button_to "Log In", new_session_path, method: 'get' %> <br>
 <% end %>
-
+<%= button_to 'Register', new_user_path, method: 'get' %>
 <h2>Welcome to DigiBelt, an online tech advice service! Ever have trouble deciding on
 what technology to user for your project? We're here to try to help! Either consult our
 stored data on various technologies, or start a project here on our site! Based on your
 project specifications, we will try to recommend certain technologies to incorporate within
 your project. Click the links below to get started. </h2> <br>
+
+<hr>
+<%= button_to 'Information Page', info_path, method: 'get' %>
+<%= button_to 'Create a project', new_project_path, method: 'get' %>
